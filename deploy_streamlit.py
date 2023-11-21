@@ -182,7 +182,7 @@ def main():
             unsafe_allow_html=True
         )
         st.sidebar.markdown('---')
-        use_webcam = st.sidebar.checkbox("Use Webcam")
+        # use_webcam = st.sidebar.checkbox("Use Webcam")
         st.sidebar.markdown('---')
         video_file_buffer = st.sidebar.file_uploader("Upload a Video", type=["mp4", "avi", "mov", "asf"])
 
