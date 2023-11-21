@@ -11,7 +11,7 @@ def load_yolonas_process_each_image(image, confidence, st):
 
     device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
 
-    model = models.get("yolo_nas_s", num_classes=26, checkpoint_path="weights/ckpt_best.pth").to(device)
+    model = models.get("yolo_nas_s", num_classes=26, checkpoint_path="./ckpt_best.pth").to(device)
 
     classNames = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
@@ -46,7 +46,7 @@ def load_yolo_nas_process_each_frame(video_name, kpi1_text, kpi2_text, kpi3_text
 
     device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
 
-    model = models.get("yolo_nas_s", num_classes=26, checkpoint_path="weights/ckpt_best.pth").to(device)
+    model = models.get("yolo_nas_s", num_classes=26, checkpoint_path="./ckpt_best.pth").to(device)
 
     count = 0
     prev_time = 0
