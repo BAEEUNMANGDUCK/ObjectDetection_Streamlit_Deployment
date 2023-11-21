@@ -155,17 +155,17 @@ def main():
         )
         img_file_buffer = st.sidebar.file_uploader("Upload an Image", type=["jpg", "jpeg", "png"])
 
-        DEMO_IMAGE = "Image/a1.jpg"
+        #DEMO_IMAGE = "Image/a1.jpg"
 
         if img_file_buffer is not None:
             img = cv2.imdecode(np.fromstring(img_file_buffer.read(), np.uint8), 1)
             image = np.array(Image.open(img_file_buffer))
-        else:
-            img = cv2.imread(DEMO_IMAGE)
-            image = np.array(Image.open(DEMO_IMAGE))
-        st.sidebar.text("Original Image")
-        st.sidebar.image(image)
-        load_yolonas_process_each_image(image, confidence, st)
+        #else:
+        #   img = cv2.imread(DEMO_IMAGE)
+        #   image = np.array(Image.open(DEMO_IMAGE))
+        #st.sidebar.text("Original Image")
+        #st.sidebar.image(image)
+            load_yolonas_process_each_image(image, confidence, st)
     elif app_mode == "Run on Video":
         st.markdown(
             """
@@ -186,20 +186,19 @@ def main():
         st.sidebar.markdown('---')
         video_file_buffer = st.sidebar.file_uploader("Upload a Video", type=["mp4", "avi", "mov", "asf"])
 
-        DEMO_VIDEO = "Video/demonewnew.mp4"
+        #DEMO_VIDEO = "Video/demonewnew.mp4"
 
         tffile = tempfile.NamedTemporaryFile(suffix='.mp4', delete=False)
 
         if not video_file_buffer:
-            if use_webcam:
-                tffile.name = 0
-            else:
-                vid = cv2.VideoCapture(DEMO_VIDEO)
-                tffile.name = DEMO_VIDEO
-                demo_vid = open(tffile.name, 'rb')
-                demo_bytes = demo_vid.read()
-                st.sidebar.text("Input Video")
-                st.sidebar.video(demo_bytes)
+            tffile.name = 0 
+            # if use_webcam:
+            #     tffile.name = 0
+            # else:
+            #     demo_vid = open(tffile.name, 'rb')
+            #     demo_bytes = demo_vid.read()
+            #     st.sidebar.text("Input Video")
+            #     st.sidebar.video(demo_bytes)
         else:
             tffile.write(video_file_buffer.read())
             demo_vid = open(tffile.name, 'rb')
