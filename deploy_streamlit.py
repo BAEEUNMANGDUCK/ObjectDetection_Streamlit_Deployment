@@ -133,7 +133,7 @@ def main():
         st.video("https://www.youtube.com/watch?v=6_gXiBe9y9A")
         st.markdown("""
                     # About Me \n
-                    I'm Eunbae Kim, Please see this video
+                    I'm Eunbae Kim, this is my YOLO-NAS + Streamlit Project! Please watch this video.
         """)
     elif app_mode == "Run on Image":
         st.sidebar.markdown('---')
