@@ -93,7 +93,7 @@ def load_yolo_nas_process_each_frame(video_name, kpi1_text, kpi2_text, kpi3_text
 
 
 def main():
-    st.title("Alphabet Sign Language Detection with YOLO-NAS")
+    st.title("American Sign Language Detection with YOLO-NAS")
     st.sidebar.title("Settings")
     st.sidebar.subheader("Parameters")
     st.markdown(
